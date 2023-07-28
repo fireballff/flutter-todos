@@ -57,7 +57,7 @@ class _TaskDetailItemState extends State<TaskDetailItem>
 
   @override
   void dispose() {
-    timer?.cancel();
+    timer.cancel();
     _controller?.dispose();
     debugPrint("taskDetailItem ${widget.index} 销毁");
     super.dispose();

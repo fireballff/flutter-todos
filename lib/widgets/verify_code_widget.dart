@@ -38,7 +38,7 @@ class _VerifyCodeWidgetState extends State<VerifyCodeWidget> {
 
   @override
   void dispose() {
-    _timer?.cancel();
+    _timer.cancel();
     cancelToken?.cancel();
     super.dispose();
   }
@@ -75,7 +75,7 @@ class _VerifyCodeWidgetState extends State<VerifyCodeWidget> {
             "language": globalModel.currentLanguageCode[0]
           },
           success: (CommonBean bean) {
-            _timer?.cancel();
+            _timer.cancel();
             int count = 30;
             Timer countdownTimer =
                 new Timer.periodic(new Duration(seconds: 1), (Timer timer) {

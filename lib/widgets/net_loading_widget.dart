@@ -140,15 +140,15 @@ class LoadingController {
   LoadingFlag _flag = LoadingFlag.loading;
 
   void setFlag(LoadingFlag loadingFlag) {
-    _state?.loadingFlag = loadingFlag;
+    _state.loadingFlag = loadingFlag;
     _flag = loadingFlag;
-    _state?.refresh();
-    print("设置:${_state?.loadingFlag}");
+    _state.refresh();
+    print("设置:${_state.loadingFlag}");
   }
 
   void _setState(_NetLoadingWidgetState state) {
-    if (this?._state == null) {
-      this?._state = state;
+    if (this._state == null) {
+      this._state = state;
     } else {
       this._state = null;
       this._state = state;

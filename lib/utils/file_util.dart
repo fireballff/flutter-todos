@@ -78,7 +78,7 @@ class FileUtil {
       onReceiveProgress: (int count, int total) {
         final downloadProgress = ((count / total) * 100).toInt();
         if (downloadProgress == 100) {
-          if (onComplete != null) onComplete(path + name);
+ onComplete(path + name);
         }
       },
       options: Options(sendTimeout: 15 * 1000, receiveTimeout: 360 * 1000),

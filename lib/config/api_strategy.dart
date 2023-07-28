@@ -110,7 +110,7 @@ class ApiStrategy {
     ProgressCallback progressCallBack,
     CancelToken token,
   }) async {
-    if (params != null && params.isNotEmpty) {
+    if (params.isNotEmpty) {
       print("<net> params :" + params.toString());
     }
 
@@ -120,7 +120,7 @@ class ApiStrategy {
       Response response;
       if (method == GET) {
         //组合GET请求的参数
-        if (params != null && params.isNotEmpty) {
+        if (params.isNotEmpty) {
           response = await _client.get(
             url,
             queryParameters: params,
@@ -133,7 +133,7 @@ class ApiStrategy {
           );
         }
       } else {
-        if (params != null && params.isNotEmpty) {
+        if (params.isNotEmpty) {
           response = await _client.post(
             url,
             data: formData ?? new FormData.fromMap(params),
@@ -157,9 +157,7 @@ class ApiStrategy {
         return;
       }
 
-      if (callBack != null) {
-        callBack(response.data);
-      }
+      callBack(response.data);
     } catch (e) {
       _handError(errorCallBack, e.toString());
     }
@@ -167,9 +165,7 @@ class ApiStrategy {
 
   //处理异常
   static void _handError(Function errorCallback, String errorMsg) {
-    if (errorCallback != null) {
-      errorCallback(errorMsg);
-    }
+    errorCallback(errorMsg);
     print("<net> errorMsg :" + errorMsg);
   }
 }

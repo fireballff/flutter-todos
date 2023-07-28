@@ -364,9 +364,7 @@ class EditTaskPageLogic {
       textColor: _model.textColorBean,
       finishDate: _model?.finishDate?.toIso8601String() ?? "",
     );
-    if (id != null) {
-      taskBean.id = id;
-    }
+    taskBean.id = id;
     return taskBean;
   }
 

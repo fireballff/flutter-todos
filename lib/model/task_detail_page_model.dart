@@ -76,7 +76,7 @@ class TaskDetailPageModel extends ChangeNotifier {
 
   @override
   void dispose() {
-    timer?.cancel();
+    timer.cancel();
     if(!cancelToken.isCancelled) cancelToken.cancel();
     super.dispose();
     globalModel.taskDetailPageModel = null;

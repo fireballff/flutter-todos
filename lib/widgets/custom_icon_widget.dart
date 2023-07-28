@@ -16,7 +16,6 @@ class CustomIconWidget extends StatefulWidget {
     this.pickerColor,
     this.onTextChange, this.iconName,
   })  : assert(iconData != null),
-        assert(onApplyTap != null),
         assert(onTextChange != null),
         assert(pickerColor != null);
 
